@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2">
-              {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              {['Skills', 'Projects'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -69,7 +69,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Right - Contact & Social */}
+          {/* Right - Connect & Social */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="space-y-2 text-gray-400">

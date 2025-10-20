@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react'
+import { Github, Linkedin, Mail, ChevronDown, MessageCircle, Download, FileText } from 'lucide-react'
 import { personalInfo } from '@/lib/data'
+import { sendToWhatsApp } from '@/lib/whatsapp'
 
 // ✅ Pindahkan ke luar component
 const TYPING_TITLES = ['Frontend Developer', 'React.js Developer', 'Next.js Developer', 'TypeScript Developer']
@@ -47,10 +48,18 @@ const Hero = () => {
     }
   }
 
+  const handleWhatsApp = () => {
+    const message = 'Halo! Saya ingin berdiskusi tentang project development.'
+    sendToWhatsApp(personalInfo.phone, message)
+  }
+
   const socialLinks = [
-    { icon: Github, href: personalInfo.github, label: 'GitHub' },
-    { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' }
+    { icon: Github, href: personalInfo.github, label: 'GitHub', type: 'link' },
+    { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn', type: 'link' },
+    { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email', type: 'link' },
+    { icon: MessageCircle, href: '#', label: 'WhatsApp', type: 'whatsapp', action: handleWhatsApp },
+    { icon: Download, href: '/files/Deska_Mulyana_CV.pdf', label: 'Download CV', type: 'download', download: 'Deska_Mulyana_CV.pdf' },
+    { icon: FileText, href: '/files/Deska_Mulyana_Portfolio.pdf', label: 'Portfolio PDF', type: 'download', download: 'Deska_Mulyana_Portfolio.pdf' }
   ]
 
   return (
@@ -107,7 +116,7 @@ const Hero = () => {
             View My Work
           </button>
           <button 
-            onClick={() => scrollToSection('contact')}
+            onClick={() => sendToWhatsApp(personalInfo.phone, 'Hi! I\'m interested in discussing potential projects and collaboration opportunities.')}
             className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105"
           >
             Get In Touch
@@ -115,27 +124,48 @@ const Hero = () => {
         </div>
 
         {/* Social links */}
-        <div className="flex justify-center space-x-6 mb-16 animate-fadeInUp" style={{ animationDelay: '1s' }}>
+        <div className="flex justify-center space-x-4 mb-16 animate-fadeInUp" style={{ animationDelay: '1s' }}>
           {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-110"
-              aria-label={social.label}
-            >
-              <social.icon size={20} />
-            </a>
+            social.type === 'whatsapp' ? (
+              <button
+                key={index}
+                onClick={social.action}
+                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-green-500 hover:text-white transition-all duration-300 transform hover:scale-110"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+              </button>
+            ) : social.type === 'download' ? (
+              <a
+                key={index}
+                href={social.href}
+                download={social.download}
+                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-110"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+              </a>
+            ) : (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-110"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+              </a>
+            )
           ))}
         </div>
 
         {/* Scroll indicator */}
         <div className="animate-bounce">
           <button 
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('skills')}
             className="text-white/70 hover:text-white transition-colors"
-            aria-label="Scroll to about section"
+            aria-label="Scroll to skills section"
           >
             <ChevronDown size={32} />
           </button>

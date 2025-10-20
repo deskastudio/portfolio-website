@@ -9,17 +9,17 @@ const About = () => {
       icon: GraduationCap,
       title: "Education",
       value: personalInfo.university,
-      description: `${personalInfo.gpa} GPA • Semester 8`
+      description: `${personalInfo.gpa} GPA • 8th Semester`
     },
     {
       icon: Code,
-      title: "Final Project",
-      value: "Travel Website",
-      description: "Using Agile Scrum Methodology"
+      title: "Current Role",
+      value: "Frontend Developer",
+      description: "Nova Development - Web3 Platform"
     },
     {
       icon: Trophy,
-      title: "Achievement",
+      title: "Experience",
       value: "Lab Assistant",
       description: "Teaching 30+ students"
     },
@@ -50,23 +50,23 @@ const About = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Frontend Developer & Student
+                Frontend Developer & Final Year Student
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                 <p>
-                  Mahasiswa Sistem Informasi semester 8 di Universitas Gunadarma yang passionate 
-                  dalam Frontend Development. Saya menikmati proses membangun aplikasi web modern 
-                  menggunakan React.js, Next.js, dan TypeScript.
+                  8th semester Information Systems student at Gunadarma University with a passion 
+                  for Frontend Development. Currently working as a Frontend Developer at Nova Development, 
+                  building Web3 blockchain trading platforms using modern technologies.
                 </p>
                 <p>
-                  Berpengalaman dalam metodologi Agile Scrum melalui tugas akhir yang sedang saya 
-                  kerjakan. Saya juga aktif sebagai Asisten Laboratorium, membimbing 30+ mahasiswa 
-                  dalam praktikum pemrograman dan database.
+                  Experienced in Agile Scrum methodology through real-world projects including my final 
+                  thesis project. I also serve as a Laboratory Assistant, guiding 30+ students 
+                  in programming and database practicum sessions.
                 </p>
                 <p>
-                  Selalu tertarik untuk belajar teknologi baru dan menciptakan user experience 
-                  yang optimal. Saat ini sedang fokus menyelesaikan studi dan mencari kesempatan 
-                  karir sebagai Frontend Developer.
+                  Always eager to learn new technologies and create optimal user experiences. 
+                  Currently focused on completing my studies while gaining valuable industry experience 
+                  in the Web3 and blockchain space.
                 </p>
               </div>
             </div>
@@ -77,7 +77,7 @@ const About = () => {
                 Core Technologies
               </h4>
               <div className="flex flex-wrap gap-3">
-                {['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'Agile Scrum'].map((skill) => (
+                {['React.js', 'Next.js', 'TypeScript', 'Solana', 'Tailwind CSS', 'Web3'].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"

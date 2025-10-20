@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { Moon, Sun, Menu, X } from 'lucide-react'
+import { useDarkMode } from '@/hooks/useDarkMode'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { isDarkMode, toggleDarkMode, isClient } = useDarkMode()
 
   // Handle scroll effect
   useEffect(() => {
@@ -16,35 +17,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Handle dark mode
-  useEffect(() => {
-    // Check localStorage first, then system preference
-    const savedDarkMode = localStorage.getItem('darkMode')
-    const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    const isDark = savedDarkMode === 'true' || (savedDarkMode === null && systemDarkMode)
-    
-    setIsDarkMode(isDark)
-    
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [])
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode
-    setIsDarkMode(newDarkMode)
-    localStorage.setItem('darkMode', newDarkMode.toString())
-    
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -61,10 +33,8 @@ const Navbar = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'projects', label: 'Projects' }
   ]
 
   return (
@@ -102,10 +72,10 @@ const Navbar = () => {
             {/* Dark mode toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
               aria-label="Toggle dark mode"
             >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {isClient ? (isDarkMode ? <Sun size={20} /> : <Moon size={20} />) : <Moon size={20} />}
             </button>
 
             {/* Mobile menu button */}

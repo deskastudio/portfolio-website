@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react'
 
 export const useDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+    
     // Check localStorage first, then system preference
     const savedDarkMode = localStorage.getItem('darkMode')
     const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -12,13 +15,27 @@ export const useDarkMode = () => {
     
     setIsDarkMode(isDark)
     applyDarkMode(isDark)
+
+    // Listen for system preference changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (localStorage.getItem('darkMode') === null) {
+        setIsDarkMode(e.matches)
+        applyDarkMode(e.matches)
+      }
+    }
+    
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
 
   const applyDarkMode = (isDark: boolean) => {
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    if (typeof window !== 'undefined') {
+      if (isDark) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     }
   }
 
@@ -29,5 +46,5 @@ export const useDarkMode = () => {
     applyDarkMode(newDarkMode)
   }
 
-  return { isDarkMode, toggleDarkMode }
+  return { isDarkMode, toggleDarkMode, isClient }
 }
