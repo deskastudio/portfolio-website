@@ -57,98 +57,79 @@ export const personalInfo = {
   export const projects = [
     {
       id: 1,
-      title: "TerbitTravel - Travel Booking Platform",
-      description: "Comprehensive travel booking platform developed using Agile Scrum methodology with Google OAuth integration and Midtrans payment gateway for seamless user experience.",
-      image: "/projects/travel.svg",
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Google Auth", "Midtrans"],
+      title: "KampusGratis - Free Education Platform",
+      description: "Comprehensive educational platform providing free courses and learning resources for students. Built with modern web technologies and featuring user authentication and course management.",
+      image: "/projects/education.svg",
+      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "JWT"],
       features: [
-        "Google OAuth authentication system",
-        "Midtrans payment gateway integration",
-        "Real-time booking and reservation system",
-        "Agile Scrum development methodology",
-        "Responsive component-based architecture",
-        "Modern UI with Shadcn/ui components"
+        "Free course catalog and management",
+        "User authentication and profiles",
+        "Interactive learning modules",
+        "Progress tracking system",
+        "Responsive educational interface",
+        "Community learning features"
       ],
-      liveUrl: "https://terbit-travel.vercel.app",
-      githubUrl: "https://github.com/deskastudio/TerbitTravel",
+      liveUrl: "https://kampusgratis.id",
+      githubUrl: "https://github.com/murid-bang-riski/kampus-gratis",
       status: "Completed",
-      category: "Travel & Booking"
+      category: "Academic"
     },
     {
       id: 2,
-      title: "StayHub - Hotel Booking Frontend",
-      description: "Modern hotel booking frontend application with intuitive user interface, advanced search filtering, and seamless booking experience built with React and TypeScript.",
-      image: "/projects/hotel.svg",
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "React Router", "Axios", "React Hook Form"],
+      title: "PaketCGratis - Free Package Platform",
+      description: "Platform offering various free packages and services to users. Features modern design with comprehensive package management and user-friendly interface.",
+      image: "/projects/package.svg",
+      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "API Integration"],
       features: [
-        "Advanced hotel search and filtering",
-        "Interactive booking interface",
-        "Responsive design for all devices",
-        "Real-time availability checking",
-        "User-friendly booking flow",
-        "Modern UI/UX design"
+        "Free package catalog browsing",
+        "Advanced search and filtering",
+        "User account management",
+        "Package request system",
+        "Responsive design interface",
+        "Real-time package availability"
       ],
-      liveUrl: "https://stayhub-frontend.vercel.app",
-      githubUrl: "https://github.com/deskastudio/stayhub-frontend",
+      liveUrl: "https://paketcgratis.id",
+      githubUrl: "https://github.com/deskastudio/paketcgratis",
       status: "Completed",
-      category: "Hospitality"
+      category: "Academic"
     },
     {
       id: 3,
-      title: "Blanzaa - E-Commerce Platform",
-      description: "Full-featured e-commerce platform with modern design, product management, shopping cart functionality, and optimized user experience for online retail.",
-      image: "/projects/ecommerce.svg",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "Lucide React"],
+      title: "Hyundai M-Knows - Automotive Platform",
+      description: "Automotive knowledge and service platform for Hyundai vehicles. Features comprehensive vehicle information, service booking, and customer support system.",
+      image: "/projects/automotive.svg",
+      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "API Integration"],
       features: [
-        "Complete product catalog management",
-        "Shopping cart with state persistence",
-        "Advanced product search and filtering",
-        "Responsive e-commerce design",
-        "Smooth animations and transitions",
-        "SEO optimized product pages"
+        "Vehicle information database",
+        "Service booking system",
+        "Customer support integration",
+        "Automotive knowledge base",
+        "Responsive automotive interface",
+        "Real-time service updates"
       ],
-      liveUrl: "https://blanzaa-ecommerce.vercel.app",
-      githubUrl: "https://github.com/deskastudio/blanzaa-ecommerce",
+      liveUrl: "https://hyundai.m-knows.com",
+      githubUrl: "https://github.com/deskastudio/hyundai-mknows",
       status: "Completed",
-      category: "E-Commerce"
+      category: "Automotive"
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "Personal portfolio website showcasing projects and skills, built with Next.js 15, featuring dark mode, WhatsApp integration, and modern responsive design.",
-      image: "/projects/portfolio.svg",
-      technologies: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
+      title: "Bosowa Insurance - Frontend Application",
+      description: "Modern insurance frontend application with comprehensive policy management, claims processing, and user dashboard. Built with React and modern UI components.",
+      image: "/projects/insurance.svg",
+      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "Shadcn/ui"],
       features: [
-        "Server-side rendering with Next.js 15",
-        "Dark/Light mode toggle with system preference",
-        "WhatsApp integration for direct contact",
-        "Responsive design across all devices",
-        "Smooth animations with Framer Motion",
-        "SEO optimized with comprehensive metadata"
+        "Insurance policy management",
+        "Claims submission and tracking",
+        "User dashboard and profiles",
+        "Policy comparison tools",
+        "Responsive insurance interface",
+        "Modern UI/UX design"
       ],
-      liveUrl: "https://deskamulyana.vercel.app",
-      githubUrl: "https://github.com/deskastudio/portfolio-website",
-      status: "Completed",
-      category: "Portfolio"
-    },
-    {
-      id: 5,
-      title: "NeedSkincare.id - Skincare Consultation",
-      description: "Skincare consultation and product recommendation platform helping users find the right skincare routine based on their skin type and concerns.",
-      image: "/projects/skincare.svg",
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-      features: [
-        "Personalized skincare consultation",
-        "Product recommendation system",
-        "Skin analysis and assessment",
-        "User profile and history tracking",
-        "Responsive web application",
-        "Modern skincare-focused design"
-      ],
-      liveUrl: "https://needskincareid.vercel.app",
-      githubUrl: "https://github.com/deskastudio/needskincareid",
-      status: "Completed",
-      category: "Health & Beauty"
+      liveUrl: "https://fe-insurance-bosowa.vercel.app",
+      githubUrl: "https://github.com/deskastudio/fe-insurance-bosowa",
+      status: "In Progress",
+      category: "Insurance"
     }
   ];
   

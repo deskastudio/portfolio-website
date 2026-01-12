@@ -7,7 +7,7 @@ import { ExternalLink, Github, Tag } from 'lucide-react'
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All')
   
-  const categories = ['All', 'E-Commerce', 'Travel & Booking', 'Booking System', 'Academic']
+  const categories = ['All', 'Academic', 'Automotive', 'Insurance']
   
   const filteredProjects = activeFilter === 'All' 
     ? projects 
