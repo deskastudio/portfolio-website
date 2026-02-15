@@ -130,6 +130,25 @@ export const personalInfo = {
       githubUrl: "https://github.com/deskastudio/fe-insurance-bosowa",
       status: "In Progress",
       category: "Insurance"
+    },
+    {
+      id: 5,
+      title: "Bermoela - Psychological Test Platform",
+      description: "Online psychological test platform designed to help organizations and individuals conduct standardized psychometric assessments. Features interactive test modules, real-time scoring, and detailed result reports.",
+      image: "/projects/psikotes.svg",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React.js", "REST API", "Shadcn/ui"],
+      features: [
+        "Interactive psychological test modules",
+        "Real-time scoring and evaluation",
+        "Detailed result reports and analysis",
+        "User authentication and session management",
+        "Responsive and accessible interface",
+        "Multi-category test support"
+      ],
+      liveUrl: "https://bermoela.vercel.app",
+      githubUrl: "https://github.com/Menara-Pengetahuan-Indonesia/fe-psikotes",
+      status: "In Progress",
+      category: "Assessment"
     }
   ];
   
