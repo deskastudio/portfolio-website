@@ -67,12 +67,30 @@ export const projects = [
       "Production monitoring and issue resolution"
     ],
     liveUrl: "https://kampusgratis.id",
-    githubUrl: "https://github.com/murid-bang-riski/kampus-gratis",
+    githubUrl: "#",
     status: "Production",
     category: "Enterprise"
   },
   {
     id: 2,
+    title: "AI Chatbot Multi-Tenant",
+    description: "Production-ready AI chatbot backend with RAG (Retrieval-Augmented Generation) supporting multiple platforms. Multi-tenant architecture with Qdrant vector database, local LLM via Ollama (DeepSeek, LLaMA, Qwen), and a Next.js dashboard for managing tenants and conversations.",
+    image: "/projects/ai-chatbot.svg",
+    technologies: ["Python", "FastAPI", "Qdrant", "Ollama", "Next.js", "TypeScript", "Docker"],
+    features: [
+      "Multi-tenant architecture for multiple platform support",
+      "RAG implementation with Qdrant vector database",
+      "Local LLM integration via Ollama (DeepSeek, LLaMA, Qwen)",
+      "FAQ knowledge base with semantic search per tenant",
+      "Dashboard for tenant management and conversation tracking"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/backend-ai-chatbot",
+    status: "Completed",
+    category: "AI & LLM"
+  },
+  {
+    id: 3,
     title: "Bermoela - Psychotest Assessment Platform",
     description: "Web-based psychological test platform with dynamic question management, assessment categorization, and automated scoring logic. Integrated LLM-based AI using RAG approach with vector database for automation and assessment workflows.",
     image: "/projects/psikotes.svg",
@@ -90,7 +108,43 @@ export const projects = [
     category: "AI & Assessment"
   },
   {
-    id: 3,
+    id: 4,
+    title: "PaketCGratis - Education Platform",
+    description: "Monorepo education platform (paketcgratis.id) with Nx workspace containing backend API, user-facing frontend, and admin dashboard. Full-stack system for PKBM (community learning center) with end-to-end testing.",
+    image: "/projects/education.svg",
+    technologies: ["Next.js", "Express.js", "TypeScript", "Nx Monorepo", "Tailwind CSS"],
+    features: [
+      "Nx monorepo with backend, frontend user, and admin dashboard",
+      "User-facing platform at paketcgratis.id",
+      "Admin dashboard for content and user management",
+      "End-to-end testing for both frontend apps",
+      "Scalable monorepo architecture"
+    ],
+    liveUrl: "https://paketcgratis.id",
+    githubUrl: "#",
+    status: "Production",
+    category: "Enterprise"
+  },
+  {
+    id: 5,
+    title: "KerjaDiLuar - Job Platform",
+    description: "Job listing and recruitment platform (kerjadiluar.id) built with Nx monorepo architecture and Docker containerization. Connects job seekers with outdoor and field-based employment opportunities.",
+    image: "/projects/job-platform.svg",
+    technologies: ["Next.js", "TypeScript", "Nx Monorepo", "Tailwind CSS", "Docker"],
+    features: [
+      "Job listing and search functionality",
+      "Nx monorepo architecture for scalability",
+      "Docker containerization for deployment",
+      "Responsive design for mobile job seekers",
+      "Production deployment at kerjadiluar.id"
+    ],
+    liveUrl: "https://kerjadiluar.id",
+    githubUrl: "#",
+    status: "Production",
+    category: "Full-Stack"
+  },
+  {
+    id: 6,
     title: "Travedia - Travel Booking System",
     description: "End-to-end travel booking system with REST APIs for user management, bookings, and transactions. Features Google OAuth authentication, Midtrans payment gateway, and VPS-based deployment with CI/CD pipelines.",
     image: "/projects/travel.svg",
@@ -103,12 +157,30 @@ export const projects = [
       "Production monitoring and issue resolution"
     ],
     liveUrl: "#",
-    githubUrl: "https://github.com/deskastudio",
+    githubUrl: "https://github.com/deskastudio/TerbitTravel",
     status: "Completed",
     category: "Full-Stack"
   },
   {
-    id: 4,
+    id: 7,
+    title: "Pemesanan Menu - UMKM Food Ordering",
+    description: "Full-stack food ordering and production monitoring system for UMKM culinary businesses. Go backend with PostgreSQL and React TypeScript frontend featuring cashier dashboard, order management, and table management.",
+    image: "/projects/food-ordering.svg",
+    technologies: ["React", "TypeScript", "Go", "PostgreSQL", "Tailwind CSS", "Shadcn/ui"],
+    features: [
+      "Order management and cashier dashboard",
+      "Production monitoring for kitchen workflow",
+      "Table management with QR code support",
+      "JWT authentication and role-based access",
+      "Go REST API with Swagger documentation"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/fe-pemesanan-menu",
+    status: "Completed",
+    category: "Full-Stack"
+  },
+  {
+    id: 8,
     title: "Nova Trading Platform",
     description: "Production-grade trading platform with real-time market data streaming via WebSocket. Optimized frontend performance to maintain memory usage below 500MB in production with focus on system stability.",
     image: "/projects/trading.svg",
@@ -119,27 +191,63 @@ export const projects = [
       "Debugging and root cause analysis on critical issues",
       "REST API integration for real-time data synchronization"
     ],
-    liveUrl: "#",
-    githubUrl: "https://github.com/deskastudio",
+    liveUrl: "https://nova.trade",
+    githubUrl: "#",
     status: "Completed",
     category: "FinTech"
   },
   {
-    id: 5,
-    title: "Hyundai M-Knows - Automotive Platform",
-    description: "Automotive knowledge and service platform for Hyundai vehicles with comprehensive vehicle information, service booking, and customer support system.",
-    image: "/projects/automotive.svg",
-    technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript"],
+    id: 9,
+    title: "StayHub - Property Platform",
+    description: "Property and accommodation management platform built with React and TypeScript. Features property listings, booking management, and user dashboard with a comprehensive frontend architecture.",
+    image: "/projects/property.svg",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "REST API"],
     features: [
-      "Vehicle information database",
-      "Service booking system",
-      "Customer support integration",
-      "Responsive automotive interface"
+      "Property listing and search functionality",
+      "Booking management system",
+      "User dashboard and profile management",
+      "Responsive design for all devices",
+      "REST API integration"
     ],
-    liveUrl: "https://hyundai.m-knows.com",
-    githubUrl: "https://github.com/deskastudio/hyundai-mknows",
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/stayhub-frontend",
     status: "Completed",
-    category: "Enterprise"
+    category: "Full-Stack"
+  },
+  {
+    id: 10,
+    title: "Kasir UMKM - POS System",
+    description: "Point of Sale (POS) system designed for Indonesian small businesses (UMKM). Streamlines transaction processing, inventory tracking, and sales reporting for micro and small enterprises.",
+    image: "/projects/pos.svg",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "REST API"],
+    features: [
+      "Transaction processing and receipt generation",
+      "Product and inventory management",
+      "Sales reporting and analytics",
+      "User-friendly cashier interface",
+      "Designed for UMKM business needs"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/fe-kasir-umkm",
+    status: "Completed",
+    category: "Full-Stack"
+  },
+  {
+    id: 11,
+    title: "E-Commerce Electronic",
+    description: "E-commerce platform for electronic products built with Next.js. Features product catalog, shopping cart, and checkout flow with modern UI design.",
+    image: "/projects/ecommerce.svg",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+    features: [
+      "Product catalog with search and filtering",
+      "Shopping cart and checkout flow",
+      "Responsive e-commerce interface",
+      "Product detail pages with image gallery"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/e-commerce-electronic",
+    status: "Completed",
+    category: "E-Commerce"
   }
 ];
 
@@ -267,7 +375,7 @@ export const socialLinks = [
 ];
 
 export const stats = [
-  { label: "Projects Delivered", value: "6+" },
+  { label: "Projects Delivered", value: "11+" },
   { label: "GitHub Repositories", value: "15+" },
   { label: "Technologies Used", value: "25+" },
   { label: "Years of Experience", value: "2+" }
