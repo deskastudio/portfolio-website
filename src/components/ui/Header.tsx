@@ -45,38 +45,38 @@ const Navbar = () => {
       {/* DESKTOP NAVBAR (TOP) */}
       <header className="fixed top-0 w-full z-50 px-6 py-6 pointer-events-none hidden md:block">
         <nav className={`mx-auto max-w-5xl transition-all duration-500 pointer-events-auto ${
-          isScrolled 
-            ? 'bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-2xl px-8 py-3' 
+          isScrolled
+            ? 'bg-white/80 dark:bg-black/60 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-2xl px-8 py-3'
             : 'bg-transparent px-4 py-4'
         }`}>
           <div className="flex justify-between items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               onClick={() => scrollToSection('home')}
               className="text-xl font-black cursor-pointer group flex items-center"
             >
               <span className="bg-primary-600 text-white w-8 h-8 flex items-center justify-center rounded-lg mr-2 group-hover:rotate-12 transition-transform shadow-lg shadow-primary-500/20">D</span>
-              <span className="text-white">Deska</span>
+              <span className="text-gray-900 dark:text-white">Deska</span>
               <span className="text-primary-500">.dev</span>
             </motion.div>
 
             <div className="flex items-center space-x-1">
-              {navItems.map((item, idx) => (
+              {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-2 text-sm font-bold text-gray-400 hover:text-white transition-colors rounded-xl hover:bg-white/5"
+                  className="px-4 py-2 text-sm font-bold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-xl hover:bg-gray-100 dark:hover:bg-white/5"
                 >
                   {item.label}
                 </button>
               ))}
-              
-              <div className="w-px h-6 bg-white/10 mx-2" />
-              
+
+              <div className="w-px h-6 bg-gray-200 dark:bg-white/10 mx-2" />
+
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-xl bg-white/5 text-gray-400 hover:text-white border border-white/5 transition-all"
+                className="p-2 rounded-xl bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-white/5 transition-all"
                 aria-label="Toggle dark mode"
               >
                 {isClient ? (isDarkMode ? <Sun size={18} /> : <Moon size={18} />) : <Moon size={18} />}
@@ -92,21 +92,21 @@ const Navbar = () => {
           {/* Mobile Menu Popup (Expanding Upwards) */}
           <AnimatePresence>
             {isMobileMenuOpen && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                className="absolute bottom-20 left-0 w-full p-2 bg-black/80 backdrop-blur-3xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden"
+                className="absolute bottom-20 left-0 w-full p-2 bg-white/90 dark:bg-black/80 backdrop-blur-3xl border border-gray-200 dark:border-white/10 rounded-[2rem] shadow-2xl overflow-hidden"
               >
                 <div className="grid grid-cols-3 gap-2">
                   {navItems.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="flex flex-col items-center justify-center gap-2 p-4 rounded-2xl hover:bg-white/10 transition-colors group"
+                      className="flex flex-col items-center justify-center gap-2 p-4 rounded-2xl hover:bg-gray-100 dark:hover:bg-white/10 transition-colors group"
                     >
                       <item.icon size={20} className="text-primary-500 group-hover:scale-110 transition-transform" />
-                      <span className="text-[10px] font-black text-gray-400 group-hover:text-white uppercase tracking-tighter">{item.label}</span>
+                      <span className="text-[10px] font-black text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white uppercase tracking-tighter">{item.label}</span>
                     </button>
                   ))}
                 </div>
@@ -115,14 +115,14 @@ const Navbar = () => {
           </AnimatePresence>
 
           {/* Main Dock Bar */}
-          <nav className="bg-black/60 backdrop-blur-3xl border border-white/10 rounded-full p-2 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <nav className="bg-white/80 dark:bg-black/60 backdrop-blur-3xl border border-gray-200 dark:border-white/10 rounded-full p-2 flex items-center justify-between shadow-lg dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
             <button
               onClick={() => scrollToSection('home')}
               className="p-4 text-primary-500"
             >
               <Home size={24} />
             </button>
-            
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-primary-500/40 active:scale-90 transition-transform"
@@ -132,7 +132,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleDarkMode}
-              className="p-4 text-gray-400"
+              className="p-4 text-gray-500 dark:text-gray-400"
             >
               {isClient ? (isDarkMode ? <Sun size={24} /> : <Moon size={24} />) : <Moon size={24} />}
             </button>

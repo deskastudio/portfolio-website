@@ -38,7 +38,7 @@ const FloatingWhatsApp = () => {
                   {personalInfo.name.split(' ')[0]}
                 </h4>
                 <p className="text-sm text-green-600 dark:text-green-400">
-                  Frontend Developer
+                  Software Engineer
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ const FloatingWhatsApp = () => {
                 }}
                 className="w-full border border-green-500 text-green-500 hover:bg-green-50 dark:hover:bg-green-900/20 py-2 px-4 rounded-lg text-sm transition-colors duration-300"
               >
-                � View Projects
+                🔍 View Projects
               </button>
             </div>
           </div>

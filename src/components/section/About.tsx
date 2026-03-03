@@ -23,14 +23,14 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600/40 to-secondary-600/40 flex items-center justify-center text-8xl font-black text-white/20 select-none">
                 DM
               </div>
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-50" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(99,102,241,0.3)_0%,rgba(236,72,153,0.2)_50%,rgba(6,182,212,0.3)_100%)] mix-blend-overlay opacity-60" />
             </div>
 
             {/* Floating Info Cards */}
             <motion.div 
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 md:right-0 p-4 rounded-2xl dark-glass z-20 shadow-xl border border-white/20"
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" as const }}
+              className="absolute -top-6 -right-6 md:right-0 p-4 rounded-2xl dark-glass z-20 shadow-xl"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-500">
@@ -45,8 +45,8 @@ const About = () => {
 
             <motion.div 
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 md:left-0 p-4 rounded-2xl dark-glass z-20 shadow-xl border border-white/20"
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const, delay: 1 }}
+              className="absolute -bottom-6 -left-6 md:left-0 p-4 rounded-2xl dark-glass z-20 shadow-xl"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-500">

@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Deska Mulyana",
   title: "Software Engineer & AI Engineer",
-  subtitle: "Full-Stack | AI/LLM | DevOps",
+  subtitle: "Software Engineer | Full-Stack | AI/LLM",
   description: "Software Engineer & AI Engineer with experience building and maintaining production-grade systems end-to-end. Experienced in developing scalable web applications, designing RESTful APIs, managing relational databases, and deploying containerized services using Docker and CI/CD in cloud environments. Built LLM-based AI systems using a Retrieval-Augmented Generation (RAG) approach with vector databases to support automation and assessment workflows.",
   email: "mulyanadeska85@gmail.com",
   phone: "+6281316195586",

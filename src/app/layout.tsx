@@ -59,7 +59,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white dark:bg-dark-bg transition-colors duration-300 relative`}>
+      <body className={`${inter.className} bg-white dark:bg-dark-bg text-gray-900 dark:text-white transition-colors duration-300 relative`}>
         <div className="noise" />
         {children}
         <Analytics />

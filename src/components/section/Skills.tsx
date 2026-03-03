@@ -75,7 +75,7 @@ const Skills = () => {
               <motion.div
                 key={category.id}
                 variants={cardVariants}
-                className="group p-8 rounded-[2rem] dark:bg-white/5 border border-white/10 hover:border-primary-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)] relative overflow-hidden"
+                className="group p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.1)] relative overflow-hidden"
               >
                 {/* Decoration */}
                 <div className={`absolute -top-10 -right-10 w-32 h-32 blur-[60px] opacity-20 transition-opacity group-hover:opacity-40 ${colorClass.split(' ')[1]}`} />
@@ -91,7 +91,7 @@ const Skills = () => {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-4 py-2 rounded-xl text-sm font-bold bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all hover:text-white"
+                      className="px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-gray-300 dark:group-hover:border-white/10 transition-all hover:text-gray-900 dark:hover:text-white"
                     >
                       {skill}
                     </span>

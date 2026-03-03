@@ -48,7 +48,7 @@ const Education = () => {
                       <Trophy size={20} />
                       <span className="text-xs font-bold uppercase tracking-widest">GPA Achievement</span>
                     </div>
-                    <p className="text-xl font-black dark:text-white">{education.gpa} / 4.00</p>
+                    <p className="text-xl font-black dark:text-white">{education.gpa}</p>
                   </div>
 
                   <div className="p-6 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
