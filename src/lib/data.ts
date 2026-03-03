@@ -156,7 +156,7 @@ export const projects = [
       "VPS deployment with CI/CD automated build and release",
       "Production monitoring and issue resolution"
     ],
-    liveUrl: "#",
+    liveUrl: "https://frontend-murex-theta-45.vercel.app/",
     githubUrl: "https://github.com/deskastudio/TerbitTravel",
     status: "Completed",
     category: "Full-Stack"
@@ -174,7 +174,7 @@ export const projects = [
       "JWT authentication and role-based access",
       "Go REST API with Swagger documentation"
     ],
-    liveUrl: "#",
+    liveUrl: "https://cafe-tetangga.me",
     githubUrl: "https://github.com/deskastudio/fe-pemesanan-menu",
     status: "Completed",
     category: "Full-Stack"
@@ -227,7 +227,7 @@ export const projects = [
       "User-friendly cashier interface",
       "Designed for UMKM business needs"
     ],
-    liveUrl: "#",
+    liveUrl: "https://kasir-hilyas.tech",
     githubUrl: "https://github.com/deskastudio/fe-kasir-umkm",
     status: "Completed",
     category: "Full-Stack"
