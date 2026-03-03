@@ -174,7 +174,7 @@ export const projects = [
       "JWT authentication and role-based access",
       "Go REST API with Swagger documentation"
     ],
-    liveUrl: "https://cafe-tetangga.me",
+    liveUrl: "https://caffe.tetangga.me",
     githubUrl: "https://github.com/deskastudio/fe-pemesanan-menu",
     status: "Completed",
     category: "Full-Stack"
