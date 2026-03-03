@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Moon, Sun, Menu, X, Home, User, Code, Briefcase, FolderRoot, Mail } from 'lucide-react'
 import { useDarkMode } from '@/hooks/useDarkMode'
 
 const Navbar = () => {
@@ -9,10 +10,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { isDarkMode, toggleDarkMode, isClient } = useDarkMode()
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -32,81 +32,114 @@ const Navbar = () => {
   }
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' }
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'skills', label: 'Skills', icon: Code },
+    { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'projects', label: 'Projects', icon: FolderRoot },
+    { id: 'contact', label: 'Contact', icon: Mail }
   ]
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-lg' 
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div 
-            onClick={() => scrollToSection('home')}
-            className="text-2xl font-bold cursor-pointer transition-colors hover:text-primary-500"
-          >
-            <span className="text-gray-900 dark:text-white">Deska</span>
-            <span className="text-purple-500">.dev</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Right side buttons */}
-          <div className="flex items-center space-x-4">
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
-              aria-label="Toggle dark mode"
+    <>
+      {/* DESKTOP NAVBAR (TOP) */}
+      <header className="fixed top-0 w-full z-50 px-6 py-6 pointer-events-none hidden md:block">
+        <nav className={`mx-auto max-w-5xl transition-all duration-500 pointer-events-auto ${
+          isScrolled 
+            ? 'bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-2xl px-8 py-3' 
+            : 'bg-transparent px-4 py-4'
+        }`}>
+          <div className="flex justify-between items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              onClick={() => scrollToSection('home')}
+              className="text-xl font-black cursor-pointer group flex items-center"
             >
-              {isClient ? (isDarkMode ? <Sun size={20} /> : <Moon size={20} />) : <Moon size={20} />}
-            </button>
+              <span className="bg-primary-600 text-white w-8 h-8 flex items-center justify-center rounded-lg mr-2 group-hover:rotate-12 transition-transform shadow-lg shadow-primary-500/20">D</span>
+              <span className="text-white">Deska</span>
+              <span className="text-primary-500">.dev</span>
+            </motion.div>
 
-            {/* Mobile menu button */}
+            <div className="flex items-center space-x-1">
+              {navItems.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="px-4 py-2 text-sm font-bold text-gray-400 hover:text-white transition-colors rounded-xl hover:bg-white/5"
+                >
+                  {item.label}
+                </button>
+              ))}
+              
+              <div className="w-px h-6 bg-white/10 mx-2" />
+              
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-xl bg-white/5 text-gray-400 hover:text-white border border-white/5 transition-all"
+                aria-label="Toggle dark mode"
+              >
+                {isClient ? (isDarkMode ? <Sun size={18} /> : <Moon size={18} />) : <Moon size={18} />}
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {/* MOBILE NAVBAR (BOTTOM DOCK) */}
+      <div className="fixed bottom-6 left-0 w-full z-50 px-4 md:hidden">
+        <div className="relative mx-auto max-w-sm">
+          {/* Mobile Menu Popup (Expanding Upwards) */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div 
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                className="absolute bottom-20 left-0 w-full p-2 bg-black/80 backdrop-blur-3xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden"
+              >
+                <div className="grid grid-cols-3 gap-2">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="flex flex-col items-center justify-center gap-2 p-4 rounded-2xl hover:bg-white/10 transition-colors group"
+                    >
+                      <item.icon size={20} className="text-primary-500 group-hover:scale-110 transition-transform" />
+                      <span className="text-[10px] font-black text-gray-400 group-hover:text-white uppercase tracking-tighter">{item.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Main Dock Bar */}
+          <nav className="bg-black/60 backdrop-blur-3xl border border-white/10 rounded-full p-2 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <button
+              onClick={() => scrollToSection('home')}
+              className="p-4 text-primary-500"
+            >
+              <Home size={24} />
+            </button>
+            
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle mobile menu"
+              className="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-primary-500/40 active:scale-90 transition-transform"
             >
-              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
-          </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
-        }`}>
-          <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-left text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium py-2"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+            <button
+              onClick={toggleDarkMode}
+              className="p-4 text-gray-400"
+            >
+              {isClient ? (isDarkMode ? <Sun size={24} /> : <Moon size={24} />) : <Moon size={24} />}
+            </button>
+          </nav>
         </div>
       </div>
-    </nav>
+    </>
   )
 }
 

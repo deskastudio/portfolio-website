@@ -1,25 +1,33 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Deska Mulyana - Frontend Developer',
-  description: 'Portfolio website of Deska Mulyana, a passionate Frontend Developer specializing in React.js, Next.js, and TypeScript.',
-  keywords: 'Frontend Developer, React.js, Next.js, TypeScript, Web Development, Portfolio',
+  title: 'Deska Mulyana - Software Engineer & AI Engineer',
+  description: 'Software Engineer & AI Engineer with experience building production-grade systems end-to-end. Scalable web apps, RESTful APIs, Docker/CI/CD, and LLM-based AI systems with RAG.',
+  keywords: 'Deska Mulyana, Software Engineer, AI Engineer, Full-Stack Developer, TypeScript, Python, Next.js, NestJS, Docker, PostgreSQL, LLM, RAG, DevOps',
   authors: [{ name: 'Deska Mulyana' }],
   creator: 'Deska Mulyana',
+  metadataBase: new URL('https://deskastudio.online'),
   openGraph: {
-    title: 'Deska Mulyana - Frontend Developer',
-    description: 'Portfolio website showcasing projects and skills in modern web development.',
+    title: 'Deska Mulyana - Software Engineer & AI Engineer',
+    description: 'Building production-grade systems end-to-end. Scalable web apps, RESTful APIs, Docker/CI/CD, and LLM-based AI systems with RAG.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://deskastudio.online',
+    siteName: 'Deska Mulyana Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Deska Mulyana - Frontend Developer',
-    description: 'Portfolio website showcasing projects and skills in modern web development.',
+    title: 'Deska Mulyana - Software Engineer & AI Engineer',
+    description: 'Building production-grade systems end-to-end. Full-Stack, AI/LLM, DevOps.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -51,8 +59,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white dark:bg-gray-900 transition-colors duration-300`}>
+      <body className={`${inter.className} bg-white dark:bg-dark-bg transition-colors duration-300 relative`}>
+        <div className="noise" />
         {children}
+        <Analytics />
       </body>
     </html>
   )

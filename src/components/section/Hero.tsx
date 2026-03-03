@@ -1,19 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Github, Linkedin, Mail, ChevronDown, MessageCircle, Download, FileText } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Github, Linkedin, Mail, ChevronDown, Download, FileText, ExternalLink, Sparkles } from 'lucide-react'
 import { personalInfo } from '@/lib/data'
-import { sendToWhatsApp } from '@/lib/whatsapp'
 
-// ✅ Pindahkan ke luar component
-const TYPING_TITLES = ['Frontend Developer', 'React.js Developer', 'Next.js Developer', 'TypeScript Developer']
+const TYPING_TITLES = ['Software Engineer', 'AI Engineer', 'Full-Stack Developer', 'DevOps Engineer']
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   
-  // Ganti titles jadi TYPING_TITLES
   useEffect(() => {
     const currentTitle = TYPING_TITLES[currentIndex]
     const timeout = setTimeout(() => {
@@ -31,10 +29,10 @@ const Hero = () => {
           setCurrentIndex((currentIndex + 1) % TYPING_TITLES.length)
         }
       }
-    }, isDeleting ? 100 : 150)
+    }, isDeleting ? 50 : 100)
 
     return () => clearTimeout(timeout)
-  }, [displayText, currentIndex, isDeleting]) // Hapus titles dari dependency
+  }, [displayText, currentIndex, isDeleting])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -48,129 +46,129 @@ const Hero = () => {
     }
   }
 
-  const handleWhatsApp = () => {
-    const message = 'Halo! Saya ingin berdiskusi tentang project development.'
-    sendToWhatsApp(personalInfo.phone, message)
-  }
-
   const socialLinks = [
-    { icon: Github, href: personalInfo.github, label: 'GitHub', type: 'link' },
-    { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn', type: 'link' },
-    { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email', type: 'link' },
-    { icon: MessageCircle, href: '#', label: 'WhatsApp', type: 'whatsapp', action: handleWhatsApp },
-    { icon: Download, href: '/files/Deska_Mulyana_CV.pdf', label: 'Download CV', type: 'download', download: 'Deska_Mulyana_CV.pdf' },
-    { icon: FileText, href: '/files/Deska_Mulyana_Portfolio.pdf', label: 'Portfolio PDF', type: 'download', download: 'Deska_Mulyana_Portfolio.pdf' }
+    { icon: Github, href: personalInfo.github, label: 'GitHub' },
+    { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
+    { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
+    { icon: Download, href: '/files/CV_Deska Mulyana_(SE)(EN).pdf', label: 'CV', download: 'CV_Deska_Mulyana_SE.pdf' },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  }
+
   return (
-    <section id="home" className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 gradient-bg"></div>
-      <div className="absolute inset-0 bg-black/20"></div>
-      
-      {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      
-      {/* Main content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        {/* Profile image placeholder */}
-        <div className="mb-8 animate-fadeInUp">
-          <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-white/20 to-white/10 border-4 border-white/30 flex items-center justify-center text-3xl font-bold shadow-2xl">
-            <span className="text-white">DM</span>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Intense Background Glows */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[10%] left-[-5%] w-[50%] h-[50%] rounded-full bg-primary-500/20 blur-[140px] animate-pulse" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-secondary-500/20 blur-[140px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[40%] left-[30%] w-[30%] h-[30%] rounded-full bg-accent-500/10 blur-[120px]" />
+      </div>
+
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 container mx-auto px-6 text-center"
+      >
+        <motion.div variants={itemVariants} className="inline-block mb-8">
+          <div className="px-5 py-2 rounded-full border border-primary-500/30 bg-primary-500/10 backdrop-blur-md text-primary-400 text-sm font-bold tracking-widest flex items-center gap-2">
+            <Sparkles size={16} className="text-accent-500" />
+            AVAILABLE FOR NEW OPPORTUNITIES
           </div>
-        </div>
+        </motion.div>
 
-        {/* Greeting */}
-        <div className="mb-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, {`I'm`} <span className="text-yellow-300">{personalInfo.name.split(' ')[0]}</span>
-          </h1>
-        </div>
+        <motion.h1 
+          variants={itemVariants}
+          className="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-[1.1]"
+        >
+          <span className="text-white">ENGINEERING</span>
+          <br />
+          <span className="text-gradient">SMART SOLUTIONS.</span>
+        </motion.h1>
 
-        {/* Typing animation */}
-        <div className="mb-8 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-          <p className="text-xl md:text-2xl h-8 flex items-center justify-center">
-            <span className="mr-2">{`I'm`} a</span>
-            <span className="text-yellow-300 font-semibold min-w-[250px] text-left">
-              {displayText}
-              <span className="animate-pulse">|</span>
-            </span>
-          </p>
-        </div>
+        <motion.div variants={itemVariants} className="mb-10">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
+            <p className="text-xl md:text-3xl text-white font-bold">
+              <span className="text-gray-500 font-medium">I am a</span> {displayText}
+              <span className="inline-block w-[3px] h-8 bg-accent-500 ml-2 animate-pulse" />
+            </p>
+          </div>
+        </motion.div>
 
-        {/* Description */}
-        <div className="mb-10 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            {personalInfo.description}
-          </p>
-        </div>
+        <motion.p 
+          variants={itemVariants}
+          className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-medium"
+        >
+          {personalInfo.description.split('.')[0]}. Specialized in <span className="text-white">Next.js</span>, <span className="text-white">AI Systems</span>, and <span className="text-white">Cloud Infrastructure</span>.
+        </motion.p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
           <button 
             onClick={() => scrollToSection('projects')}
-            className="px-8 py-4 bg-white text-purple-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group relative px-10 py-5 bg-white text-black font-black rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
           >
-            View My Work
+            <span className="relative z-10 flex items-center gap-2">
+              VIEW PROJECTS <ExternalLink size={20} />
+            </span>
           </button>
+          
           <button 
-            onClick={() => sendToWhatsApp(personalInfo.phone, 'Hi! I\'m interested in discussing potential projects and collaboration opportunities.')}
-            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105"
+            onClick={() => scrollToSection('contact')}
+            className="px-10 py-5 border-2 border-white/10 dark:bg-white/5 backdrop-blur-md dark:text-white font-black rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all hover:scale-105 active:scale-95"
           >
-            Get In Touch
+            GET IN TOUCH
           </button>
-        </div>
+        </motion.div>
 
-        {/* Social links */}
-        <div className="flex justify-center space-x-4 mb-16 animate-fadeInUp" style={{ animationDelay: '1s' }}>
-          {socialLinks.map((social, index) => (
-            social.type === 'whatsapp' ? (
-              <button
-                key={index}
-                onClick={social.action}
-                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-green-500 hover:text-white transition-all duration-300 transform hover:scale-110"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </button>
-            ) : social.type === 'download' ? (
-              <a
-                key={index}
-                href={social.href}
-                download={social.download}
-                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-110"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </a>
-            ) : (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-110"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </a>
-            )
+        <motion.div variants={itemVariants} className="flex justify-center items-center gap-8">
+          {socialLinks.map((link, idx) => (
+            <a
+              key={idx}
+              href={link.href}
+              download={link.download}
+              target={link.download ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className="p-4 rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-primary-500/50 hover:bg-primary-500/10 transition-all duration-300 transform hover:-translate-y-2 group"
+              aria-label={link.label}
+            >
+              <link.icon size={26} className="group-hover:scale-110 transition-transform" />
+            </a>
           ))}
-        </div>
+        </motion.div>
+      </motion.div>
 
-        {/* Scroll indicator */}
-        <div className="animate-bounce">
-          <button 
-            onClick={() => scrollToSection('skills')}
-            className="text-white/70 hover:text-white transition-colors"
-            aria-label="Scroll to skills section"
+      {/* Enhanced Scroll indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer"
+        onClick={() => scrollToSection('about')}
+      >
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500">SCROLL DOWN</span>
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center p-1"
           >
-            <ChevronDown size={32} />
-          </button>
+            <div className="w-1 h-2 bg-accent-500 rounded-full" />
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

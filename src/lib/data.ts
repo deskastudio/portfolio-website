@@ -1,252 +1,274 @@
 export const personalInfo = {
-    name: "Deska Mulyana",
-    title: "Frontend Developer",
-    subtitle: "React.js | Next.js | TypeScript",
-    description: "Frontend Developer specializing in Web3 blockchain platforms and modern web applications using React.js, Next.js, and TypeScript.",
-    email: "mulyanadeska85@gmail.com",
-    phone: "+6281316195586",
-    location: "Tangerang, Indonesia",
-    linkedin: "https://www.linkedin.com/in/deskamulyana/",
-    github: "https://github.com/deskastudio",
-    gpa: "3.75",
-    university: "Gunadarma University",
-    expectedGraduation: "2025"
-  };
-  
-  export const skills = {
-    frontend: [
-      { name: "React.js", icon: "⚛️", level: 90 },
-      { name: "Next.js", icon: "▲", level: 85 },
-      { name: "TypeScript", icon: "📘", level: 80 },
-      { name: "JavaScript", icon: "💛", level: 90 },
-      { name: "HTML5", icon: "🧡", level: 95 },
-      { name: "CSS3", icon: "💙", level: 90 }
+  name: "Deska Mulyana",
+  title: "Software Engineer & AI Engineer",
+  subtitle: "Full-Stack | AI/LLM | DevOps",
+  description: "Software Engineer & AI Engineer with experience building and maintaining production-grade systems end-to-end. Experienced in developing scalable web applications, designing RESTful APIs, managing relational databases, and deploying containerized services using Docker and CI/CD in cloud environments. Built LLM-based AI systems using a Retrieval-Augmented Generation (RAG) approach with vector databases to support automation and assessment workflows.",
+  email: "mulyanadeska85@gmail.com",
+  phone: "+6281316195586",
+  location: "Tangerang, Indonesia",
+  linkedin: "https://www.linkedin.com/in/deskamulyana/",
+  github: "https://github.com/deskastudio",
+  portfolio: "https://deskastudio.online",
+  gpa: "3.77",
+  university: "Gunadarma University",
+  graduated: "2025"
+};
+
+export const skillCategories = [
+  {
+    id: "languages",
+    label: "Programming Languages",
+    skills: ["JavaScript", "TypeScript", "Python", "Golang", "Java"]
+  },
+  {
+    id: "backend",
+    label: "Backend & API Development",
+    skills: ["Node.js (Express.js)", "NestJS", "Flask", "REST API Design", "Authentication (JWT, OAuth)", "API Documentation (Swagger)"]
+  },
+  {
+    id: "frontend",
+    label: "Frontend Development",
+    skills: ["React.js", "Next.js", "Redux", "Tailwind CSS", "Shadcn/ui"]
+  },
+  {
+    id: "database",
+    label: "Database & Data Engineering",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Database Schema Design", "Query Optimization", "Relational Modeling"]
+  },
+  {
+    id: "ai",
+    label: "AI & System Integration",
+    skills: ["LLM Integration", "Retrieval-Augmented Generation (RAG)", "Vector Database", "Prompt Engineering"]
+  },
+  {
+    id: "devops",
+    label: "DevOps & Infrastructure",
+    skills: ["Docker", "CI/CD (GitHub Actions)", "Linux", "SSH", "VPS Management", "Deployment Automation", "Railway", "Vercel"]
+  },
+  {
+    id: "tools",
+    label: "Tools & Workflow",
+    skills: ["Git", "Agile/Scrum", "Jest", "WebSocket Integration"]
+  }
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "KampusGratis - Education & LMS Platform",
+    description: "Production-grade educational platform (kampusgratis.id) and multi-client SaaS LMS on AWS infrastructure. Features Docker-based containerization, CI/CD pipelines, and PostgreSQL database optimization for scalable multi-client architecture.",
+    image: "/projects/education.svg",
+    technologies: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Docker", "AWS", "CI/CD"],
+    features: [
+      "Multi-client SaaS LMS architecture on AWS",
+      "Docker containerization with CI/CD pipelines (GitHub Actions)",
+      "PostgreSQL schema design for scalable multi-client systems",
+      "LLM-based AI chatbot with RAG approach",
+      "Production monitoring and issue resolution"
     ],
-    styling: [
-      { name: "Tailwind CSS", icon: "🎨", level: 90 },
-      { name: "Material-UI", icon: "🎭", level: 85 },
-      { name: "Shadcn/ui", icon: "🎪", level: 80 },
-      { name: "Bootstrap", icon: "🅱️", level: 85 }
+    liveUrl: "https://kampusgratis.id",
+    githubUrl: "https://github.com/murid-bang-riski/kampus-gratis",
+    status: "Production",
+    category: "Enterprise"
+  },
+  {
+    id: 2,
+    title: "Bermoela - Psychotest Assessment Platform",
+    description: "Web-based psychological test platform with dynamic question management, assessment categorization, and automated scoring logic. Integrated LLM-based AI using RAG approach with vector database for automation and assessment workflows.",
+    image: "/projects/psikotes.svg",
+    technologies: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "OpenAI API", "Vector Database"],
+    features: [
+      "Dynamic question management and assessment categorization",
+      "Automated scoring logic with detailed result reports",
+      "LLM-based AI chatbot with RAG and vector database",
+      "User authentication and session management",
+      "Responsive and accessible interface"
     ],
-    backend: [
-      { name: "Flask", icon: "🐍", level: 75 },
-      { name: "Express.js", icon: "🚀", level: 70 },
-      { name: "Laravel", icon: "🔴", level: 65 }
+    liveUrl: "https://bermoela.vercel.app",
+    githubUrl: "https://github.com/Menara-Pengetahuan-Indonesia/fe-psikotes",
+    status: "Production",
+    category: "AI & Assessment"
+  },
+  {
+    id: 3,
+    title: "Travedia - Travel Booking System",
+    description: "End-to-end travel booking system with REST APIs for user management, bookings, and transactions. Features Google OAuth authentication, Midtrans payment gateway, and VPS-based deployment with CI/CD pipelines.",
+    image: "/projects/travel.svg",
+    technologies: ["React.js", "TypeScript", "Redux", "Tailwind CSS", "Google OAuth", "Midtrans"],
+    features: [
+      "Full-stack travel booking system built end-to-end",
+      "REST API design for users, bookings, and transactions",
+      "Google OAuth authentication and Midtrans payment gateway",
+      "VPS deployment with CI/CD automated build and release",
+      "Production monitoring and issue resolution"
     ],
-    database: [
-      { name: "MongoDB", icon: "🍃", level: 80 },
-      { name: "MySQL", icon: "🐬", level: 85 }
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio",
+    status: "Completed",
+    category: "Full-Stack"
+  },
+  {
+    id: 4,
+    title: "Nova Trading Platform",
+    description: "Production-grade trading platform with real-time market data streaming via WebSocket. Optimized frontend performance to maintain memory usage below 500MB in production with focus on system stability.",
+    image: "/projects/trading.svg",
+    technologies: ["Next.js", "TypeScript", "WebSocket", "Tailwind CSS", "REST API"],
+    features: [
+      "Real-time market data streaming via WebSocket",
+      "Memory optimization below 500MB in production",
+      "Debugging and root cause analysis on critical issues",
+      "REST API integration for real-time data synchronization"
     ],
-    tools: [
-      { name: "Git", icon: "📚", level: 85 },
-      { name: "GitHub", icon: "🐙", level: 90 },
-      { name: "JIRA", icon: "🎯", level: 75 },
-      { name: "Figma", icon: "🎨", level: 80 },
-      { name: "Postman", icon: "📮", level: 80 }
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio",
+    status: "Completed",
+    category: "FinTech"
+  },
+  {
+    id: 5,
+    title: "Hyundai M-Knows - Automotive Platform",
+    description: "Automotive knowledge and service platform for Hyundai vehicles with comprehensive vehicle information, service booking, and customer support system.",
+    image: "/projects/automotive.svg",
+    technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript"],
+    features: [
+      "Vehicle information database",
+      "Service booking system",
+      "Customer support integration",
+      "Responsive automotive interface"
     ],
-    other: [
-      { name: "Redux", icon: "🔄", level: 80 },
-      { name: "Solana", icon: "🟣", level: 75 },
-      { name: "Web3", icon: "🔗", level: 70 },
-      { name: "Google OAuth", icon: "🔐", level: 85 },
-      { name: "Midtrans", icon: "💳", level: 80 },
-      { name: "Agile Scrum", icon: "🏃", level: 85 }
-    ]
-  };
-  
-  export const projects = [
-    {
-      id: 1,
-      title: "KampusGratis - Free Education Platform",
-      description: "Comprehensive educational platform providing free courses and learning resources for students. Built with modern web technologies and featuring user authentication and course management.",
-      image: "/projects/education.svg",
-      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "JWT"],
-      features: [
-        "Free course catalog and management",
-        "User authentication and profiles",
-        "Interactive learning modules",
-        "Progress tracking system",
-        "Responsive educational interface",
-        "Community learning features"
-      ],
-      liveUrl: "https://kampusgratis.id",
-      githubUrl: "https://github.com/murid-bang-riski/kampus-gratis",
-      status: "Completed",
-      category: "Academic"
-    },
-    {
-      id: 2,
-      title: "PaketCGratis - Free Package Platform",
-      description: "Platform offering various free packages and services to users. Features modern design with comprehensive package management and user-friendly interface.",
-      image: "/projects/package.svg",
-      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "API Integration"],
-      features: [
-        "Free package catalog browsing",
-        "Advanced search and filtering",
-        "User account management",
-        "Package request system",
-        "Responsive design interface",
-        "Real-time package availability"
-      ],
-      liveUrl: "https://paketcgratis.id",
-      githubUrl: "https://github.com/deskastudio/paketcgratis",
-      status: "Completed",
-      category: "Academic"
-    },
-    {
-      id: 3,
-      title: "Hyundai M-Knows - Automotive Platform",
-      description: "Automotive knowledge and service platform for Hyundai vehicles. Features comprehensive vehicle information, service booking, and customer support system.",
-      image: "/projects/automotive.svg",
-      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "API Integration"],
-      features: [
-        "Vehicle information database",
-        "Service booking system",
-        "Customer support integration",
-        "Automotive knowledge base",
-        "Responsive automotive interface",
-        "Real-time service updates"
-      ],
-      liveUrl: "https://hyundai.m-knows.com",
-      githubUrl: "https://github.com/deskastudio/hyundai-mknows",
-      status: "Completed",
-      category: "Automotive"
-    },
-    {
-      id: 4,
-      title: "Bosowa Insurance - Frontend Application",
-      description: "Modern insurance frontend application with comprehensive policy management, claims processing, and user dashboard. Built with React and modern UI components.",
-      image: "/projects/insurance.svg",
-      technologies: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "TypeScript", "Shadcn/ui"],
-      features: [
-        "Insurance policy management",
-        "Claims submission and tracking",
-        "User dashboard and profiles",
-        "Policy comparison tools",
-        "Responsive insurance interface",
-        "Modern UI/UX design"
-      ],
-      liveUrl: "https://fe-insurance-bosowa.vercel.app",
-      githubUrl: "https://github.com/deskastudio/fe-insurance-bosowa",
-      status: "In Progress",
-      category: "Insurance"
-    },
-    {
-      id: 5,
-      title: "Bermoela - Psychological Test Platform",
-      description: "Online psychological test platform designed to help organizations and individuals conduct standardized psychometric assessments. Features interactive test modules, real-time scoring, and detailed result reports.",
-      image: "/projects/psikotes.svg",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React.js", "REST API", "Shadcn/ui"],
-      features: [
-        "Interactive psychological test modules",
-        "Real-time scoring and evaluation",
-        "Detailed result reports and analysis",
-        "User authentication and session management",
-        "Responsive and accessible interface",
-        "Multi-category test support"
-      ],
-      liveUrl: "https://bermoela.vercel.app",
-      githubUrl: "https://github.com/Menara-Pengetahuan-Indonesia/fe-psikotes",
-      status: "In Progress",
-      category: "Assessment"
-    }
-  ];
-  
-  export const experience = [
-    {
-      id: 1,
-      title: "Front End Developer",
-      company: "Nova Development",
-      period: "August 2025 - Present",
-      description: "Developing and maintaining user interfaces for blockchain-based Web3 trading platform",
-      responsibilities: [
-        "Develop and maintain user interfaces for Web3 blockchain trading platform, ensuring optimal functionality and user experience",
-        "Improve application stability by performing root cause analysis and fixing critical system bugs",
-        "Implement dynamic page customization features, allowing users to adjust interface layout according to preferences to increase engagement",
-        "Collaborate effectively with backend teams and designers to ensure smooth integration of new features according to design specifications"
-      ],
-      technologies: ["Next.js", "Solana", "TypeScript", "React.js", "Tailwind CSS"],
-      type: "full-time"
-    },
-    {
-      id: 2,
-      title: "Frontend Developer (Final Project)",
-      company: "Travedia Terbit Semesta",
-      period: "February 2025 - July 2025",
-      description: "Leading frontend development in Scrum team for travel booking system",
-      responsibilities: [
-        "Lead frontend development in Scrum team to build travel booking system, implementing Agile methodology from sprint planning to retrospectives",
-        "Design reusable and type-safe component library architecture using React.js and TypeScript, accelerating development process by 30%",
-        "Integrate secure user authentication through Google OAuth and Midtrans payment gateway for reliable transactions"
-      ],
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Google Auth", "Midtrans", "Git"],
-      type: "project"
-    },
-    {
-      id: 3,
-      title: "Laboratory Assistant",
-      company: "Gunadarma University",
-      period: "October 2023 - Present",
-      description: "Guiding 30+ students per session in programming practicum",
-      responsibilities: [
-        "Guide more than 30 students per session in programming practicum, improving their understanding of Java, MySQL, and Golang",
-        "Deliver materials and provide guidance in application development, focusing on best practices in database design and query optimization"
-      ],
-      technologies: ["Java", "MySQL", "Golang", "Database Design"],
-      type: "part-time"
-    },
-    {
-      id: 4,
-      title: "CAT Exam Supervisor",
-      company: "Gunadarma University",
-      period: "2025",
-      description: "Maintaining 100% system uptime during exam periods",
-      responsibilities: [
-        "Maintain 100% system uptime during exam periods by performing quick and efficient technical troubleshooting",
-        "Ensure exam application compatibility across various browsers and document every solution for future reference"
-      ],
-      technologies: ["System Administration", "Browser Compatibility", "Technical Support"],
-      type: "part-time"
-    }
-  ];
-  
-  export const education = {
-    degree: "Bachelor of Information Systems",
-    university: "Gunadarma University",
-    period: "2021 - 2025",
-    gpa: "3.75/4.00",
-    semester: "8th",
-    finalProject: "Travel Website Development using Agile Scrum Methodology",
-    relevantCourses: [
-      "Web Programming & Development",
-      "Database Management Systems", 
-      "Software Engineering",
-      "Human Computer Interaction",
-      "System Analysis and Design"
-    ]
-  };
-  
-  export const socialLinks = [
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/deskamulyana/",
-      icon: "linkedin"
-    },
-    {
-      name: "GitHub", 
-      url: "https://github.com/deskastudio",
-      icon: "github"
-    },
-    {
-      name: "Email",
-      url: "mailto:mulyanadeska85@gmail.com",
-      icon: "email"
-    }
-  ];
-  
-  export const stats = [
-    { label: "Projects Completed", value: "5+" },
-    { label: "GitHub Repositories", value: "15+" },
-    { label: "Technologies Mastered", value: "12+" },
-    { label: "Years Experience", value: "2+" }
-  ];
+    liveUrl: "https://hyundai.m-knows.com",
+    githubUrl: "https://github.com/deskastudio/hyundai-mknows",
+    status: "Completed",
+    category: "Enterprise"
+  }
+];
+
+export const experience = [
+  {
+    id: 1,
+    title: "Web Programmer & AI Engineer",
+    company: "M-Knows Consulting & Kampus Gratis",
+    period: "November 2025 - Present",
+    description: "Developing and maintaining production applications including kampusgratis.id and multi-client SaaS LMS platforms on AWS infrastructure",
+    responsibilities: [
+      "Developed and maintained production applications including kampusgratis.id and multi-client SaaS Learning Management System (LMS) platforms on AWS infrastructure",
+      "Managed Docker-based containerization and implemented CI/CD pipelines (GitHub Actions) for automated build, testing, and deployment",
+      "Designed and optimized PostgreSQL database schemas to support scalable and multi-client system architecture",
+      "Built a web-based psychotest platform with dynamic question management, assessment categorization, and automated scoring logic",
+      "Integrated an LLM-based AI chatbot using a Retrieval-Augmented Generation (RAG) approach with vector database implementation",
+      "Performed monitoring, debugging, and production issue resolution to maintain system stability and performance",
+      "Owned features end-to-end, from technical design through development and production deployment"
+    ],
+    technologies: ["Next.js", "NestJS/Express.js", "TypeScript", "PostgreSQL", "Docker", "AWS", "GitHub Actions", "OpenAI API", "Vector Database"],
+    type: "full-time"
+  },
+  {
+    id: 2,
+    title: "Front End Developer",
+    company: "Nova Development / Trader",
+    period: "August - October 2025",
+    description: "Developed and maintained a production-grade trading platform with focus on system stability and performance",
+    responsibilities: [
+      "Developed and maintained a production-grade trading platform with a strong focus on system stability and performance",
+      "Integrated WebSocket on the frontend to handle real-time market data streaming and transaction updates",
+      "Optimized application performance to maintain memory usage below 500MB in production",
+      "Performed debugging and root cause analysis on critical issues to reduce production bugs",
+      "Collaborated with backend engineers to integrate REST APIs and ensure reliable real-time data synchronization"
+    ],
+    technologies: ["Next.js", "TypeScript", "WebSocket", "Tailwind CSS", "REST API"],
+    type: "contract"
+  },
+  {
+    id: 3,
+    title: "Fullstack Web Developer",
+    company: "Travedia Terbit Semesta",
+    period: "January - June 2025",
+    description: "Developed and maintained the travel booking system end-to-end through production deployment",
+    responsibilities: [
+      "Developed and maintained the travel booking system end-to-end through production deployment",
+      "Designed and implemented REST APIs for user management, bookings, and transactions",
+      "Integrated authentication (Google OAuth) and payment gateway (Midtrans) to support secure transaction flows",
+      "Managed VPS-based deployment and implemented CI/CD pipelines for automated build and release processes",
+      "Performed monitoring, debugging, and production issue resolution to ensure system stability and performance"
+    ],
+    technologies: ["React.js", "TypeScript", "Redux", "Tailwind CSS", "Google OAuth", "Midtrans"],
+    type: "contract"
+  },
+  {
+    id: 4,
+    title: "Independent Infrastructure & Production Systems",
+    company: "Self-Managed",
+    period: "Ongoing",
+    description: "Designing and managing VPS-based application deployments and containerized services",
+    responsibilities: [
+      "Designed and managed VPS-based application deployments through production",
+      "Managed containerized services using Docker in Linux environments",
+      "Configured reverse proxy and SSL to ensure system security and availability",
+      "Performed monitoring and incident resolution across production systems independently"
+    ],
+    technologies: ["Docker", "Linux", "SSH", "Nginx", "SSL", "VPS Management"],
+    type: "independent"
+  }
+];
+
+export const education = {
+  degree: "Bachelor of Information Systems",
+  university: "Gunadarma University",
+  period: "2021 - 2025",
+  gpa: "3.77/4.00",
+  status: "Graduated",
+  finalProject: "Travel Website Development Using Agile Scrum Methodology",
+  relevantCourses: [
+    "Web Programming & Development",
+    "Database Management Systems",
+    "Software Engineering"
+  ]
+};
+
+export const certifications = [
+  {
+    title: "Fullstack Software Developer",
+    issuer: "Kampus Merdeka x Productzilla"
+  },
+  {
+    title: "Fullstack Web Developer",
+    issuer: "Kampus Merdeka x LearningX"
+  },
+  {
+    title: "Junior Web Programming",
+    issuer: "Badan Nasional Sertifikasi Profesi (BNSP)"
+  },
+  {
+    title: "Project Management Course",
+    issuer: "MySkill"
+  },
+  {
+    title: "Fundamental Front End Developer & Laravel 9",
+    issuer: "Coding Studio"
+  }
+];
+
+export const socialLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/deskamulyana/",
+    icon: "linkedin"
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/deskastudio",
+    icon: "github"
+  },
+  {
+    name: "Email",
+    url: "mailto:mulyanadeska85@gmail.com",
+    icon: "email"
+  }
+];
+
+export const stats = [
+  { label: "Projects Delivered", value: "6+" },
+  { label: "GitHub Repositories", value: "15+" },
+  { label: "Technologies Used", value: "25+" },
+  { label: "Years of Experience", value: "2+" }
+];
