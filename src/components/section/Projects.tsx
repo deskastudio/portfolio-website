@@ -5,7 +5,13 @@ import { projects } from '@/lib/data'
 import { Github, ExternalLink, ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
+type ProjectWithBadges = (typeof projects)[number] & { badges?: string[] }
+
 const Projects = () => {
+  const clientProjects = (projects as ProjectWithBadges[]).filter(
+    p => !p.badges?.includes('SaaS Product')
+  )
+
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -22,7 +28,7 @@ const Projects = () => {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
+          {clientProjects.map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -40,6 +46,30 @@ const Projects = () => {
                   <span className="px-3 py-1 text-xs font-bold uppercase tracking-widest bg-black/50 backdrop-blur-md text-white rounded-full border border-white/10">
                     {project.category}
                   </span>
+                </div>
+
+                {/* Status + custom badges (SaaS Product / AI-Powered / Live) */}
+                <div className="absolute top-4 right-4 z-20 flex flex-wrap gap-2 justify-end max-w-[60%]">
+                  {project.liveUrl && project.liveUrl !== '#' && (
+                    <span className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/90 backdrop-blur-md text-white rounded-full border border-emerald-300/30">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      Live
+                    </span>
+                  )}
+                  {'badges' in project && Array.isArray((project as { badges?: string[] }).badges) && (project as { badges: string[] }).badges.map(badge => (
+                    <span
+                      key={badge}
+                      className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md text-white rounded-full border ${
+                        badge === 'AI-Powered'
+                          ? 'bg-fuchsia-500/90 border-fuchsia-300/30'
+                          : badge === 'SaaS Product'
+                          ? 'bg-primary-500/90 border-primary-300/30'
+                          : 'bg-black/50 border-white/20'
+                      }`}
+                    >
+                      {badge}
+                    </span>
+                  ))}
                 </div>
 
                 {/* Tech Badges on Image */}

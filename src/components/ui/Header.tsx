@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Moon, Sun, Menu, X, Home, User, Code, Briefcase, FolderRoot, Mail } from 'lucide-react'
+import { Moon, Sun, Menu, X, Home, User, Code, Briefcase, FolderRoot, Mail, Sparkles } from 'lucide-react'
 import { useDarkMode } from '@/hooks/useDarkMode'
 
 const Navbar = () => {
@@ -36,6 +36,7 @@ const Navbar = () => {
     { id: 'about', label: 'About', icon: User },
     { id: 'skills', label: 'Skills', icon: Code },
     { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'products', label: 'Products', icon: Sparkles },
     { id: 'projects', label: 'Projects', icon: FolderRoot },
     { id: 'contact', label: 'Contact', icon: Mail }
   ]

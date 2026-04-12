@@ -69,7 +69,8 @@ export const projects = [
     liveUrl: "https://kampusgratis.id",
     githubUrl: "#",
     status: "Production",
-    category: "Enterprise"
+    category: "Enterprise",
+    badges: ["SaaS Product", "AI-Powered"]
   },
   {
     id: 2,
@@ -87,7 +88,8 @@ export const projects = [
     liveUrl: "#",
     githubUrl: "https://github.com/deskastudio/backend-ai-chatbot",
     status: "Completed",
-    category: "AI & LLM"
+    category: "AI & LLM",
+    badges: ["AI-Powered"]
   },
   {
     id: 3,
@@ -105,7 +107,8 @@ export const projects = [
     liveUrl: "https://bermoela.vercel.app",
     githubUrl: "https://github.com/Menara-Pengetahuan-Indonesia/fe-psikotes",
     status: "Production",
-    category: "AI & Assessment"
+    category: "AI & Assessment",
+    badges: ["AI-Powered"]
   },
   {
     id: 4,
@@ -248,6 +251,120 @@ export const projects = [
     githubUrl: "https://github.com/deskastudio/e-commerce-electronic",
     status: "Completed",
     category: "E-Commerce"
+  },
+  {
+    id: 12,
+    title: "LMS Corporate (M-Knows) - Enterprise SaaS",
+    description: "Multi-tenant enterprise LMS platform with 37 features across 3 pricing tiers (Standar, Profesional, Premium). Features 351 API routes, 157 pages, and 70+ database models with dynamic sidebar per package and role-based access control.",
+    image: "/projects/education.svg",
+    technologies: ["Next.js", "Prisma", "PostgreSQL", "TypeScript", "Docker"],
+    features: [
+      "Multi-tenant architecture with 37 features across 3 pricing tiers",
+      "351 API routes, 157 pages, 70+ database models",
+      "Dynamic sidebar per package with role-based access control",
+      "Production-grade scale with multi-client isolation",
+      "Enterprise subscription billing and feature gating"
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "Production",
+    category: "Enterprise",
+    badges: ["SaaS Product", "Enterprise"]
+  },
+  {
+    id: 13,
+    title: "Buatperjanjian - Contract Generator SaaS",
+    description: "SaaS platform for generating employment contracts from customizable templates. Streamlines legal document creation for businesses and freelancers with automated template filling and PDF export.",
+    image: "/projects/legal.svg",
+    technologies: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
+    features: [
+      "Customizable contract templates with dynamic fields",
+      "Automated template filling and PDF export",
+      "User authentication and document history",
+      "Template library for common employment contracts",
+      "Self-hosted SaaS product"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/buatperjanjian",
+    status: "Completed",
+    category: "SaaS",
+    badges: ["SaaS Product"]
+  },
+  {
+    id: 14,
+    title: "Pesanzy - QR Food Ordering SaaS",
+    description: "QR code-based food ordering system for restaurants and cafes. Customers scan, browse menu, and place orders directly from their phone. Real-time order management dashboard for restaurant owners.",
+    image: "/projects/food-ordering.svg",
+    technologies: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
+    features: [
+      "QR code-based menu and ordering flow",
+      "Real-time order management dashboard",
+      "Multi-restaurant support with tenant isolation",
+      "Order history and sales analytics",
+      "Self-hosted SaaS product"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/pesanzy",
+    status: "Completed",
+    category: "SaaS",
+    badges: ["SaaS Product"]
+  },
+  {
+    id: 15,
+    title: "Satubio - Link-in-Bio Platform with AI",
+    description: "Link-in-bio all-in-one platform for Indonesian sellers. Sellers create a mini storefront at satu.bio/storename with product catalog, menu, branch locations, WhatsApp buttons, and external links. AI-powered product description and WA template generation with ISR for fast performance.",
+    image: "/projects/ecommerce.svg",
+    technologies: ["Next.js 14", "Golang (Chi)", "PostgreSQL", "Cloudflare R2", "OpenAI API"],
+    features: [
+      "Mini storefront per seller at satu.bio/storename",
+      "AI-generated product descriptions and WhatsApp templates (OpenAI)",
+      "Golang Chi backend with PostgreSQL",
+      "Cloudflare R2 for asset storage",
+      "ISR (Incremental Static Regeneration) for fast performance"
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "Completed",
+    category: "SaaS",
+    badges: ["SaaS Product", "AI-Powered"]
+  },
+  {
+    id: 16,
+    title: "Hanami - Salon & Spa Home Service",
+    description: "Booking platform for salon and spa home service. Professional therapists come to the customer's home. Features online booking, service catalog (hair, nail, facial, massage), therapist profiles, pricing, and testimonials. Supabase auth (OAuth + OTP).",
+    image: "/projects/property.svg",
+    technologies: ["Next.js 16", "Supabase", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Framer Motion"],
+    features: [
+      "Online booking for home service salon and spa",
+      "Service catalog: hair, nail, facial, massage",
+      "Therapist profiles with pricing and testimonials",
+      "Supabase auth with OAuth and OTP",
+      "Modern stack with Next.js 16 and Framer Motion animations"
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "Completed",
+    category: "Marketplace",
+    badges: ["SaaS Product"]
+  },
+  {
+    id: 17,
+    title: "ShopKing - E-Commerce with AI Chatbot",
+    description: "E-commerce platform for the Indonesian market with an AI chatbot (DeepSeek via OpenRouter), product recommendation engine (Item-Based Collaborative Filtering), integrated POS system, and multi-role management (Admin, Manager, POS Operator, Customer). Multi-language (ID/EN), Rupiah currency.",
+    image: "/projects/ecommerce.svg",
+    technologies: ["Laravel 10", "Vue.js 3", "MySQL", "Tailwind CSS", "OpenRouter API", "DeepSeek"],
+    features: [
+      "AI chatbot powered by DeepSeek via OpenRouter API",
+      "Product recommendation via Item-Based Collaborative Filtering",
+      "Integrated POS system for physical stores",
+      "Multi-role: Admin, Manager, POS Operator, Customer",
+      "Multi-language (ID/EN) with Rupiah currency support"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/deskastudio/shopking",
+    status: "Completed",
+    category: "E-Commerce",
+    badges: ["AI-Powered"]
   }
 ];
 
@@ -307,14 +424,16 @@ export const experience = [
     title: "Independent Infrastructure & Production Systems",
     company: "Self-Managed",
     period: "Ongoing",
-    description: "Designing and managing VPS-based application deployments and containerized services",
+    description: "Managing VPS deployments with Docker containerization, Nginx reverse proxy, SSL automation, and CI/CD pipelines. Self-hosted n8n automation workflows and PostgreSQL database clusters.",
     responsibilities: [
-      "Designed and managed VPS-based application deployments through production",
-      "Managed containerized services using Docker in Linux environments",
-      "Configured reverse proxy and SSL to ensure system security and availability",
+      "Managed VPS deployments with Docker containerization across multiple production services",
+      "Configured Nginx reverse proxy and automated SSL certificate renewal (Let's Encrypt/Certbot)",
+      "Built CI/CD pipelines with GitHub Actions for automated build, test, and deployment",
+      "Self-hosted n8n automation workflows for internal process automation",
+      "Managed PostgreSQL database clusters with backup and monitoring",
       "Performed monitoring and incident resolution across production systems independently"
     ],
-    technologies: ["Docker", "Linux", "SSH", "Nginx", "SSL", "VPS Management"],
+    technologies: ["Docker", "Linux", "Nginx", "SSL/Certbot", "GitHub Actions", "n8n", "PostgreSQL", "VPS Management"],
     type: "independent"
   }
 ];
@@ -375,8 +494,8 @@ export const socialLinks = [
 ];
 
 export const stats = [
-  { label: "Projects Delivered", value: "11+" },
-  { label: "GitHub Repositories", value: "15+" },
-  { label: "Technologies Used", value: "25+" },
+  { label: "Projects Delivered", value: "17+" },
+  { label: "GitHub Repositories", value: "20+" },
+  { label: "Technologies Used", value: "30+" },
   { label: "Years of Experience", value: "2+" }
 ];

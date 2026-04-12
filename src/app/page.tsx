@@ -5,7 +5,9 @@ import Skills from '@/components/section/Skills'
 import Experience from '@/components/section/Experience'
 import Education from '@/components/section/Education'
 import Certifications from '@/components/section/Certifications'
+import Products from '@/components/section/Products'
 import Projects from '@/components/section/Projects'
+import OpenSource from '@/components/section/OpenSource'
 import Contact from '@/components/section/Contact'
 import Footer from '@/components/ui/Footer'
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp'
@@ -20,7 +22,9 @@ export default function Home() {
       <Experience />
       <Education />
       <Certifications />
+      <Products />
       <Projects />
+      <OpenSource />
       <Contact />
       <Footer />
       <FloatingWhatsApp />
