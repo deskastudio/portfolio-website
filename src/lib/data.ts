@@ -497,5 +497,5 @@ export const stats = [
   { label: "Projects Delivered", value: "17+" },
   { label: "GitHub Repositories", value: "20+" },
   { label: "Technologies Used", value: "30+" },
-  { label: "Years of Experience", value: "2+" }
+  { label: "Years of Experience", value: "1.5+" }
 ];
